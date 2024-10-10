@@ -1281,10 +1281,12 @@ box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
   }
 }
 
-@media (max-width: 1121) {
-    
+@media (max-width: 848px) {
+    .social-links {
+      display: flex;
+      flex-direction: column;
+    }
 }
-
 @-webkit-keyframes spin {
   0% {
     -webkit-transform: rotate(0deg);
