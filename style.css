@@ -80,7 +80,7 @@ html {
 }
 
 .fim-de-semana-2 {
-  margin-bottom: 7vh;
+  margin-bottom: 8vh;
 }
 
 
@@ -689,7 +689,7 @@ box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
 
 
 .course-tab {
-  border-radius: 5px;
+  border-radius: 10px;
   font-family: 'Basic';
   text-transform: uppercase;
   font-size: 2.27vh; 
@@ -708,7 +708,7 @@ box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
 
 
 .course-tab:hover {
-  border-radius: 5px;
+  border-radius: 10px;
   background-color: #1b1b1b33; 
   color: #fff; 
   transform: scale(0.9); 
@@ -716,7 +716,7 @@ box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
 
 
 .course-tab.active {
-  border-radius: 5px;
+  border-radius: 10px;
   padding: 10px;
   border-radius: 10px;
   background-color: #000000; 
