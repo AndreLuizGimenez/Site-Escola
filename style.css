@@ -171,7 +171,15 @@ html {
 /* end loader */
 
 
-
+.borda-footer {
+  position: absolute;
+  width: 100vw;
+  height: 60px;
+  background-color: #C42C19;
+  margin: 0;
+  left: 0;
+  bottom: 0;
+}
 
 
 .parallax {
@@ -401,6 +409,10 @@ html {
     display: block;
     opacity: 1;
     transition: .0.1s ease-in-out;
+  }
+
+  .text-slide p {
+    font-size: 1.4rem;
   }
 }
 
@@ -692,7 +704,7 @@ box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
   font-family: 'Basic';
   text-transform: uppercase;
-  font-size: 2.27vh; 
+  font-size: 2vh; 
   cursor: pointer;
   font-weight: 900; 
   height: 60px;
@@ -1126,14 +1138,14 @@ box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
   color: #000000;
   margin-left: 20px;
   flex: 2;
-  font-size: 15px;
+  font-size: 0.7rem;
   margin-top: 30px;
   align-items: center;
   margin-bottom: 10px;
 }
 
 .social-links {
-  margin-top: ;
+  /* margin-top: ; */
   text-align: right;
   flex: 2;
   margin-left: 100px;
