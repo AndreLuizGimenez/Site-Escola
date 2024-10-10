@@ -49,23 +49,23 @@ function navigateToSection(sectionId) {
     updateSlideshow();
     courseTabs.forEach(t => t.classList.remove('active'));
     courseTabs[index].classList.add('active'); // Marca a aba como ativa
+    
+    // Rola suavemente para a aba de cursos, ajustando a posição
+    const offset = 80; // Ajuste este valor conforme necessário
+    const targetPosition = courseTabs[index].getBoundingClientRect().top + window.scrollY - offset;
+    window.scrollTo({ top: targetPosition, behavior: 'smooth' });
   }
 }
 
 // Eventos para os botões de curso
+const sectionIds = ['analise', 'quimica', 'agronegocios', 'farmacia', 'vestuario', 'marketing', 'seguranca', 'recursos-humanos', 'formacao'];
 courseTabs.forEach((tab, index) => {
   tab.addEventListener('click', () => {
-    currentSection = index;
-    currentSlide = 0; // Reinicia para o primeiro slide
-    updateSlidesVisibility();
-    updateSlideshow();
-    courseTabs.forEach(t => t.classList.remove('active'));
-    tab.classList.add('active');
+    navigateToSection(sectionIds[index]); // Usa a função de navegação
   });
 });
 
 // Adiciona eventos de clique para cada ID de seção
-const sectionIds = ['analise', 'quimica', 'agronegocios', 'farmacia', 'vestuario', 'marketing', 'seguranca', 'recursos-humanos', 'formacao'];
 sectionIds.forEach(id => {
   document.getElementById(id).addEventListener('click', () => navigateToSection(id));
 });
@@ -75,15 +75,23 @@ const nextButton = document.querySelector('.next');
 const prevButton = document.querySelector('.prev');
 
 nextButton.addEventListener('click', () => {
-  currentSlide = (currentSlide + 1) % 2; 
+  const slidesCount = slidesSections[currentSection].children.length;
+  console.log(`Navegando para próximo: Seção ${currentSection}, Total de Slides: ${slidesCount}, Slide Atual: ${currentSlide}`);
+  currentSlide = (currentSlide + 1) % slidesCount; // Usa o número real de slides
   updateSlideshow();
 });
 
 prevButton.addEventListener('click', () => {
-  currentSlide = (currentSlide - 1 + 2) % 2; 
+  const slidesCount = slidesSections[currentSection].children.length;
+  console.log(`Navegando para anterior: Seção ${currentSection}, Total de Slides: ${slidesCount}, Slide Atual: ${currentSlide}`);
+  currentSlide = (currentSlide - 1 + slidesCount) % slidesCount; // Usa o número real de slides
   updateSlideshow();
 });
 
+// Inicializar a apresentação de slides
+function initializeSlideshow() {
+  updateSlidesVisibility();
+  updateSlideshow();
+}
 
-updateSlidesVisibility();
-updateSlideshow();
+initializeSlideshow();
