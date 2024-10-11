@@ -391,7 +391,7 @@ html {
   }
 
   #check:checked~.navbar {
-    height: 28vh;
+    height: 32vh;
   }
 
   .navbar a {
