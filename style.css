@@ -183,7 +183,7 @@ html {
 
 
 .parallax {
-  background-image: url(./Assets/imgs/banner3.png);
+  background-image: url(./Assets/imgs/banner3.webp);
   height: 56vh;
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -678,8 +678,7 @@ box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
 
 
 .course-tabs {
-  background: url(https://media.discordapp.net/attachments/1265705528156229674/1292999427228963018/Design_sem_nome.png?ex=6705c70e&is=6704758e&hm=1fa7ad4aa4726b28c2bb0458c97ba20d0f935e1c3181c2c026c030c5c8ac10b3&=&format=webp&quality=lossless&width=831&height=467) repeat-x;
-  background: linear-gradient(to right, #6e0108 10%, #e22b13);
+  background: linear-gradient(to top, #6e0108 1%, #e22b13);
   z-index: 9999;
   display: flex;
   justify-content: center;
@@ -920,6 +919,25 @@ box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
   display: block; 
 }
 
+.slide1 p {
+  bottom: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  color: #fff;
+  text-align: center;
+  font-size: 7vw;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: absolute;
+  z-index: 2;
+  text-transform: uppercase;
+  line-height: 6.5vw;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  width: 90%;
+}
 
 
 
@@ -930,7 +948,7 @@ box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
    }
 
   .parallax {
-    background-image: url(./Assets/imgs/banner_escola.png);
+    background-image: url(./Assets/imgs/banner_escola.webp);
     height: 50vh;
     background-attachment: scroll;
     background-repeat: no-repeat;
@@ -993,20 +1011,11 @@ box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
     font-size: 2.8vw;
   }
 
-   .slide-image-pc {
-    display: none;
-  
-  }
-
-  .slide-image-cell {
-    display: block;
-  }
-
-  .slide-image-cell p {
+  .slide1 p {
     bottom: 50%;
     left: 50%;
     transform: translate(-50%, 50%);
-    color: #fff;
+    color: #ffffff;
     text-align: center;
     font-size: 9vw;
     font-family: "Poppins", sans-serif;
@@ -1015,14 +1024,16 @@ box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
     margin: 0 auto;
     overflow: hidden;
     position: absolute;
-    border-radius: 5px;
     z-index: 2;
     text-transform: uppercase;
     line-height: 8vw;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    width: none;
   }
 
 }
+
+
 
 
 
