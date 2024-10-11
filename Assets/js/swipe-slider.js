@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let startX;
     let currentSection = 0;
     let currentSlide = 0;
-    const swipeThreshold = 50;
+    const swipeThreshold = 0.99; // 99%
 
     function updateSlidesVisibility() {
         slidesSections.forEach((section, index) => {
@@ -30,12 +30,13 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function handleTouchMove(event) {
-        if (!startX) return; 
-        const currentX = event.touches[0].clientX; 
-        const diffX = startX - currentX; 
+        if (!startX) return;
+        const currentX = event.touches[0].clientX;
+        const diffX = startX - currentX;
+        const swipePercentage = Math.abs(diffX) / slideshowContainer.clientWidth;
 
-        if (Math.abs(diffX) > swipeThreshold) {
-            if (diffX > 0 && currentSlide < slidesSections[currentSection].children.length - 1) { 
+        if (swipePercentage > swipeThreshold) {
+            if (diffX > 0 && currentSlide < slidesSections[currentSection].children.length - 1) {
                 currentSlide++;
             } else if (diffX < 0 && currentSlide > 0) {
                 currentSlide--;
