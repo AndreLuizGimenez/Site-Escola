@@ -50,10 +50,12 @@ function navigateToSection(sectionId) {
     courseTabs.forEach(t => t.classList.remove('active'));
     courseTabs[index].classList.add('active'); // Marca a aba como ativa
     
-    // Rola suavemente para a aba de cursos, ajustando a posição
-    const offset = 80; // Ajuste este valor conforme necessário
-    const targetPosition = courseTabs[index].getBoundingClientRect().top + window.scrollY - offset;
-    window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+    // Rola suavemente apenas em telas maiores
+    if (window.innerWidth >= 768) { // Ajuste conforme necessário
+      const offset = 80; // Ajuste este valor conforme necessário
+      const targetPosition = courseTabs[index].getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+    }
   }
 }
 
